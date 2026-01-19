@@ -1,0 +1,38 @@
+# Documentation (keep locally, don't share)
+*.md
+!README.md
+
+# Node
+node_modules/
+npm-debug.log*
+.env
+server.log
+ngrok.log
+
+# iOS
+*.xcodeproj
+*.xcworkspace
+build/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
