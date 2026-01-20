@@ -13,10 +13,11 @@ https://github.com/user-attachments/assets/ee734f06-3292-4874-8113-b8a360370b6e
 
 ```
 iOS/                        # Native iOS Swift app
-├── ViewController.swift    # WKWebView + postMessage bridge
+├── ViewController.swift    # Main: WKWebView + postMessage bridge
 ├── AppDelegate.swift
 ├── SceneDelegate.swift
-└── Info.plist             # Network security config
+├── Info.plist             # Network security config
+└── project.yml            # XcodeGen config
 
 web/                       # Backend + Web interface
 ├── server.js              # Express API

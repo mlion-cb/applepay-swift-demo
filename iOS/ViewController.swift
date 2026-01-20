@@ -150,7 +150,7 @@ class ViewController: UIViewController {
         // For this demo, we'll use a mock URL that you'll need to replace
 
         // REPLACE THIS with your actual backend endpoint that returns the payment link
-        let backendURL = "http://localhost:3000/api/create-order"
+        let backendURL = "https://verdant-rowena-sigmoidally.ngrok-free.dev/api/create-order"
 
         guard let url = URL(string: backendURL) else {
             completion(.failure(NSError(domain: "Invalid backend URL", code: -1, userInfo: nil)))
