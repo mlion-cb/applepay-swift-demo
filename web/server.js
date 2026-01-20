@@ -52,7 +52,6 @@ app.post('/api/create-order', async (req, res) => {
             phoneNumberVerifiedAt: new Date().toISOString(),
             partnerUserRef: partnerUserRef, // IMPORTANT: sandbox- prefix for testing
             agreementAcceptedAt: new Date().toISOString(),
-            domain: 'localhost', // For web Apple Pay (enables QR code fallback)
             isQuote: false
         };
 

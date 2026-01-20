@@ -48,6 +48,8 @@ Start server:
 npm start
 ```
 
+**Web Testing:** Open `http://localhost:3000` in your browser to test the Apple Pay flow using the iframe method (displays QR code fallback for web).
+
 ### 2. iOS App Setup
 
 **Option A: Same WiFi Network**
