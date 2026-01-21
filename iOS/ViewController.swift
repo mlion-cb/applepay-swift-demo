@@ -328,15 +328,16 @@ extension ViewController: WKScriptMessageHandler {
         logEvent("📦 Message type: \(type(of: message.body))")
 
         // Parse the message body
+        // With postMessage override, messages arrive as JSON strings
         if let messageBody = message.body as? String {
-            // Try parsing as JSON string
+            // Parse JSON string (standard format from postMessage override)
             logEvent("🔤 Received as String, parsing JSON...")
             if let data = messageBody.data(using: .utf8),
                let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
                 handleMessageData(json)
             }
         } else if let messageBody = message.body as? [String: Any] {
-            // Already a dictionary
+            // Fallback for Dictionary format (used by event listener approach if enabled)
             logEvent("📘 Received as Dictionary directly")
             handleMessageData(messageBody)
         }
@@ -373,7 +374,7 @@ extension ViewController: WKNavigationDelegate {
             };
 
             /*
-            // ALTERNATIVE APPROACH (NOT RECOMMENDED): Message Event Listener
+            // ALTERNATIVE APPROACH (WILL NOT WORK): Message Event Listener
             //
             // This approach listens for postMessage events as they cross iframe boundaries.
             // However, due to Coinbase's nested iframe architecture, the same event may be
