@@ -96,9 +96,9 @@ class ViewController: UIViewController {
         contentController.add(self, name: "cbOnramp") // Handler name must be "cbOnramp"
         configuration.userContentController = contentController
 
-        // CRITICAL: These settings are required for Apple Pay to work
-        configuration.allowsInlineMediaPlayback = true
-        configuration.mediaTypesRequiringUserActionForPlayback = []
+        // These settings may be required for Apple Pay to work
+        // configuration.allowsInlineMediaPlayback = true
+        // configuration.mediaTypesRequiringUserActionForPlayback = []
 
         // Create hidden webview (will only show Apple Pay sheet, not the web page)
         webView = WKWebView(frame: .zero, configuration: configuration)
