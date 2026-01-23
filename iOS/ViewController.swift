@@ -330,7 +330,6 @@ extension ViewController: WKScriptMessageHandler {
            let data = messageBody.data(using: .utf8),
            let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
            let eventName = json["eventName"] as? String {
-            logEvent("🔔 Event: \(eventName)")
             handleCoinbaseEvent(eventName, data: json)
         }
     }
