@@ -113,13 +113,11 @@ const response = await fetch('https://api.cdp.coinbase.com/platform/v2/onramp/or
 
 ### 2. Configure WKWebView
 
-Set up WKWebView with required settings and message handler:
+Set up WKWebView with the message handler:
 
 ```swift
 // Configure WKWebView
 let configuration = WKWebViewConfiguration()
-configuration.allowsInlineMediaPlayback = true  // Required for Apple Pay
-configuration.mediaTypesRequiringUserActionForPlayback = []  // Required for Apple Pay
 
 // Register message handler to receive payment events
 let contentController = WKUserContentController()
@@ -182,7 +180,7 @@ The demo uses sandbox mode (no real money):
 **Apple Pay sheet doesn't appear**
 - Must use physical device (not simulator)
 - Device must have Apple Pay configured
-- Verify `allowsInlineMediaPlayback = true` and `mediaTypesRequiringUserActionForPlayback = []`
+- Ensure message handler name is exactly `"cbOnramp"`
 
 **No events received**
 - Handler name must be exactly `"cbOnramp"` (case-sensitive)
